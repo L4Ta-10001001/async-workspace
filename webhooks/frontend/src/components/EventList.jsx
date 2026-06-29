@@ -29,18 +29,16 @@ function EventList({ events, isLoading, onClear }) {
             <li key={event.event_id || index} className="event-item">
               <strong>{event.event_type}</strong>
               <div>
-                <p><strong>Candidato:</strong> {event.payload?.candidate_name || 'N/A'}</p>
-                <p><strong>Email:</strong> {event.payload?.candidate_email || 'N/A'}</p>
-                {event.payload?.status && (
-                  <p><strong>Estado:</strong> {event.payload.status}</p>
-                )}
-                {event.payload?.application_date && (
-                  <p><strong>Fecha:</strong> {new Date(event.payload.application_date).toLocaleString()}</p>
+                <p><strong>Order ID:</strong> {event.payload?.order_id || 'N/A'}</p>
+                <p><strong>Monto:</strong> ${event.payload?.amount || 0} {event.payload?.currency || 'USD'}</p>
+                <p><strong>Email:</strong> {event.payload?.customer_email || 'N/A'}</p>
+                {event.payload?.timestamp && (
+                  <p><strong>Timestamp:</strong> {new Date(event.payload.timestamp).toLocaleString()}</p>
                 )}
               </div>
               <small>
                 Event ID: {event.event_id} | 
-                Timestamp: {event.timestamp ? new Date(event.timestamp).toLocaleString() : 'N/A'}
+                Recibido: {event.timestamp ? new Date(event.timestamp).toLocaleString() : 'N/A'}
               </small>
             </li>
           ))}

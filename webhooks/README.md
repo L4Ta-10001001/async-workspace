@@ -492,4 +492,5 @@ docker-compose up --build
 
 ---
 
-**Siguiente Nivel**: WebSockets & Socket.IO - Comunicación bidireccional en tiempo real
+**Siguiente Nivel**: WebSockets & Socket.IO - Comunicación bidireccional en tiempo real para aplicaciones interactivas
+ tiempo real

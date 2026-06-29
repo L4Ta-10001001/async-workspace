@@ -5,7 +5,7 @@ from typing import List, Optional
 from datetime import datetime
 import uuid
 
-app = FastAPI(title="Webhooks PoC - ATS Integration")
+app = FastAPI(title="Webhooks PoC - Generic Event System")
 
 app.add_middleware(
     CORSMiddleware,
@@ -56,10 +56,10 @@ async def get_subscriptions():
     """Returns all webhook subscriptions."""
     return {"subscriptions": webhook_subscriptions}
 
-@app.post("/api/webhooks/ats/candidate-update")
-async def candidate_update_webhook(event: WebhookEvent):
-    """ATS-specific webhook: Candidate status update."""
-    event.event_type = "candidate.status.updated"
+@app.post("/api/webhooks/payment/confirmation")
+async def payment_confirmation_webhook(event: WebhookEvent):
+    """Payment gateway webhook: Payment confirmation."""
+    event.event_type = "payment.confirmed"
     event.event_id = str(uuid.uuid4())
     event.timestamp = datetime.now().isoformat()
     webhook_events.append(event)

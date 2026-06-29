@@ -57,8 +57,8 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>Webhooks PoC - ATS Integration</h1>
-        <p>Sistema de notificaciones asíncronas para seguimiento de candidatos</p>
+        <h1>Webhooks PoC - Event-Driven Integration</h1>
+        <p>Sistema de notificaciones asíncronas para integraciones web</p>
       </header>
 
       <main>

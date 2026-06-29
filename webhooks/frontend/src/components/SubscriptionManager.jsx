@@ -5,11 +5,11 @@ function SubscriptionManager({ onSubscribe, isLoading, subscriptions, isLoadingS
   const [selectedEvents, setSelectedEvents] = useState([])
 
   const availableEvents = [
-    'candidate.applied',
-    'candidate.interview.scheduled',
-    'candidate.status.updated',
-    'candidate.offer.sent',
-    'candidate.rejected'
+    'payment.completed',
+    'payment.failed',
+    'order.shipped',
+    'order.delivered',
+    'github.push'
   ]
 
   const handleEventToggle = (event) => {
